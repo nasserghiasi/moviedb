@@ -105,7 +105,7 @@ module.exports = function (webpackEnv) {
   const shouldUseReactRefresh = env.raw.FAST_REFRESH;
 
   // common function to get style loaders
-  const getStyleLoaders = (cssOptions, preProcessor) => {
+  const getStyleLoaders = (cssOptions, preProcessor, preProcessorOptions) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
       isEnvProduction && {
@@ -179,6 +179,7 @@ module.exports = function (webpackEnv) {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,
+            ...preProcessorOptions,
           },
         }
       );
@@ -417,7 +418,7 @@ module.exports = function (webpackEnv) {
                     },
                   ],
                 ],
-                
+
                 plugins: [
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
@@ -451,7 +452,7 @@ module.exports = function (webpackEnv) {
                 cacheDirectory: true,
                 // See #6846 for context on why cacheCompression is disabled
                 cacheCompression: false,
-                
+
                 // Babel sourcemaps are needed for debugging into node_modules
                 // code.  Without the options below, debuggers like VSCode
                 // show incorrect code and set breakpoints on the wrong lines.
@@ -515,7 +516,10 @@ module.exports = function (webpackEnv) {
                     mode: 'icss',
                   },
                 },
-                'sass-loader'
+                'sass-loader',
+                {
+                  additionalData: '@import "src/styles/_variables.scss";',
+                }
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -538,7 +542,10 @@ module.exports = function (webpackEnv) {
                     getLocalIdent: getCSSModuleLocalIdent,
                   },
                 },
-                'sass-loader'
+                'sass-loader',
+                {
+                  additionalData: '@import "src/styles/_variables.scss";',
+                }
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
