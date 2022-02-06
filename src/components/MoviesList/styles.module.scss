@@ -1,0 +1,17 @@
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2.66%;
+}
+
+.movieItem {
+  width: 48.5%;
+  margin-bottom: 2.66%;
+}
+
+@media screen and  (min-width: 426px){
+  .movieItem {
+    width: 23%
+  }
+}

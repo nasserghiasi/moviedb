@@ -16,3 +16,13 @@
   font-size: 0.8rem;
   composes: ellipsis;
 }
+
+.actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  > * {
+    margin-left: 6px;
+  }
+}
