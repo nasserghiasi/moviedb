@@ -2,10 +2,10 @@ import styles from './styles.module.scss';
 import MoviesList from '../../components/MoviesList';
 import movieStorage, { StorageKeys } from '../../services/movieStorage';
 import { useCallback, useState } from 'react';
-import EmptyList from '../../components/EmptyList';
 import sortByCreatedDate from '../../utils/sortByReleaseDate';
+import EmptyList from '../../components/EmptyList';
 
-function WatchList() {
+function Favorites() {
   const [movies, setMovies] = useState(getMovies());
 
   const hasMovies = movies.length > 0;
@@ -26,7 +26,7 @@ function WatchList() {
 }
 
 function getMovies() {
-  return sortByCreatedDate(movieStorage.getArray(StorageKeys.WATCH_LIST));
+  return sortByCreatedDate(movieStorage.getArray(StorageKeys.FAVORITE));
 }
 
-export default WatchList;
+export default Favorites;

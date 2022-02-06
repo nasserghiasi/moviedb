@@ -1,0 +1,39 @@
+.header {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 24px;
+
+  h1 {
+    font-size: 1rem
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      padding-left: $default-spacing
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: red
+    }
+  }
+}
+
+@media screen and  (min-width: 426px){
+  .header {
+    h1 {
+      font-size: 2rem
+    }
+  }
+}

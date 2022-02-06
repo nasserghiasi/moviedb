@@ -6,12 +6,13 @@
 }
 
 .movieItem {
-  width: 48.5%;
+  width: 23%;
   margin-bottom: 2.66%;
 }
 
-@media screen and  (min-width: 426px){
+
+@media screen and  (max-width: 425px){
   .movieItem {
-    width: 23%
+    width: 48.5%;
   }
 }

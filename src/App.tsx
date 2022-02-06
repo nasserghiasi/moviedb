@@ -2,6 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import styles from './App.module.scss';
+import Header from './components/Header';
+import Spinner from './components/Spinner';
 
 const Home = lazy(
   () =>
@@ -21,23 +23,39 @@ const WatchList = lazy(
     )
 );
 
+const Favorites = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "favorites" */
+      /* webpackPrefetch: true */
+      './routes/favorites'
+    )
+);
+
 function App() {
   return (
     <div className={styles.App}>
-      <header className={styles.header}>
-        <h1>The MovieDB</h1>
-      </header>
+      <Router>
+        <Header />
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Router>
+        <Suspense fallback={<SuspenseFallback />}>
           <div id="app" className={styles.content}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/favorites" element={<Favorites />} />
               <Route path="/watch-list" element={<WatchList />} />
             </Routes>
           </div>
-        </Router>
-      </Suspense>
+        </Suspense>
+      </Router>
+    </div>
+  );
+}
+
+function SuspenseFallback() {
+  return (
+    <div className={styles.loading}>
+      <Spinner />
     </div>
   );
 }

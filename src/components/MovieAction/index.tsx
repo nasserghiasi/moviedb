@@ -6,26 +6,22 @@ interface Props {
   className?: string;
   icon: any;
   label: string;
-  onClick: (event: MouseEvent) => void;
+  onClick: (event) => void;
 }
 
-function MovieAction({
-  active,
-  className,
-  icon: Icon,
-  label,
-  ...props
-}: Props) {
+function MovieAction({ active, className, icon: Icon, label, onClick }: Props) {
   return (
-    <Icon
-      className={classnames(styles.favorite, className, {
-        [styles.active]: active,
-      })}
-      title={label}
-      aria-checked={active}
-      aria-label={label}
-      {...props}
-    />
+    <button
+      className={styles.favoriteButton}
+      onClick={onClick}
+      aria-label={label}>
+      <Icon
+        className={classnames(styles.svg, className, {
+          [styles.active]: active,
+        })}
+        title={label}
+      />
+    </button>
   );
 }
 

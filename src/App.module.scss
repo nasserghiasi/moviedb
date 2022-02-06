@@ -2,19 +2,12 @@
   text-align: center;
 }
 
-
-.header {
-  background-color: #282c34;
-  min-height: 56px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
 .content {
   max-width: 1024px;
   margin: $default-spacing auto 0;
   padding: 0 16px;
+}
+
+.loading {
+  margin-top: 50px;
 }
