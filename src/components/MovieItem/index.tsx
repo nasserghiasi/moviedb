@@ -18,7 +18,12 @@ function MovieItem({ data, className }: Props) {
           src={data.poster_path}
           alt={data.title}
         />
-        <div>data</div>
+        <div className={styles.content}>
+          <h2 className={styles.title} title={data.title}>
+            {data.title}
+          </h2>
+          <small>Release: {data.release_date}</small>
+        </div>
       </Card>
     </div>
   );

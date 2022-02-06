@@ -518,7 +518,8 @@ module.exports = function (webpackEnv) {
                 },
                 'sass-loader',
                 {
-                  additionalData: '@import "src/styles/_variables.scss";',
+                  additionalData:
+                    '@import "src/styles/imports/_variables.scss"; @import "src/styles/imports/_utils.scss";',
                 }
               ),
               // Don't consider CSS imports dead code even if the
@@ -544,7 +545,8 @@ module.exports = function (webpackEnv) {
                 },
                 'sass-loader',
                 {
-                  additionalData: '@import "src/styles/_variables.scss";',
+                  additionalData:
+                    '@import "src/styles/imports/_variables.scss"; @import "src/styles/imports/_utils.scss";',
                 }
               ),
             },

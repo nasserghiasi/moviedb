@@ -24,7 +24,9 @@ const WatchList = lazy(
 function App() {
   return (
     <div className={styles.App}>
-      <header className={styles.header}>The MovieDB</header>
+      <header className={styles.header}>
+        <h1>The MovieDB</h1>
+      </header>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Router>

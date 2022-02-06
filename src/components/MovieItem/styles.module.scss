@@ -1,8 +1,18 @@
 .movieItem {
-  padding: 0 0 0 0;
+
 }
 
 .poster {
   height: auto;
-  width: 100px;
+  width: 100%;
+}
+
+.content {
+  text-align: left;
+  padding: 0 10px 15px 10px;
+}
+
+.title {
+  font-size: 0.8rem;
+  composes: ellipsis;
 }

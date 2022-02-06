@@ -5,7 +5,7 @@ import useSearchMovies from '../../hooks/search-movies';
 import MovieItem from '../../components/MovieItem';
 
 function Home() {
-  const [query, setQuery] = useState('The Lord of the Rings');
+  const [query, setQuery] = useState('Toy Story');
   const { movies } = useSearchMovies(query);
 
   const handChangeQuery = useCallback(event => {
@@ -15,7 +15,7 @@ function Home() {
   return (
     <div>
       <div className={styles.searchInputContainer}>
-        <Input value={query} onChange={handChangeQuery} />
+        <Input value={query} onChange={handChangeQuery} type="search" />
       </div>
       <div className={styles.results}>
         {movies.map(movie => (
