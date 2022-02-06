@@ -1,9 +1,9 @@
 import { useCallback, useRef } from 'react';
-import { Fetcher } from './dataRequest';
+import { Fetcher } from '../requests/types';
 
 function useDebouncedCallback<D>(
   callback: Fetcher<D>,
-  delay = 500
+  delay = 300
 ): Fetcher<D> {
   const timeoutRef = useRef<NodeJS.Timeout>();
 
