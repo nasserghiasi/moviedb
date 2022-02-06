@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import styles from './App.module.scss';
+
+const Home = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "home" */
+      /* webpackPrefetch: true */
+      './routes/home'
+    )
+);
+
+const WatchList = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "watch-list" */
+      /* webpackPrefetch: true */
+      './routes/watch-list'
+    )
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <header className={styles.header}>Header</header>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Router>
+          <div id="app" className={styles.content}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/watch-list" element={<WatchList />} />
+            </Routes>
+          </div>
+        </Router>
+      </Suspense>
     </div>
   );
 }
