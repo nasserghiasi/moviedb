@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import { useCallback, useState } from 'react';
-import Input from '../../components/InputField';
+import Input from '../../components/Input';
 import useSearchMovies from '../../hooks/search-movies';
 import MovieItem from '../../components/MovieItem';
 
