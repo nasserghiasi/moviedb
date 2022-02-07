@@ -1,5 +1,5 @@
 import { useCallback, useRef } from 'react';
-import { Fetcher } from '../requests/types';
+import { Fetcher } from 'requests/types';
 
 function useDebouncedCallback<D>(
   callback: Fetcher<D>,

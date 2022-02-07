@@ -1,9 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import styles from './App.module.scss';
 import Header from './components/Header';
 import Spinner from './components/Spinner';
+import styles from './App.module.scss';
 
 const Home = lazy(
   () =>
@@ -42,6 +41,9 @@ function App() {
           <div id="app" className={styles.content}>
             <Routes>
               <Route path="/" element={<Home />} />
+              {/* A support for github pages situation (for demo deployment) */}
+              <Route path="/moviedb" element={<Home />} />
+
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/watch-list" element={<WatchList />} />
             </Routes>

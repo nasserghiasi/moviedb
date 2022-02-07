@@ -1,5 +1,5 @@
-import styles from './styles.module.scss';
 import classnames from 'classnames';
+import styles from './styles.module.scss';
 
 interface Props {
   active: boolean;

@@ -1,4 +1,4 @@
-import { Movie } from '../models/movie';
+import { Movie } from 'models/movie';
 import storage from './storage';
 
 export enum StorageKeys {

@@ -1,9 +1,9 @@
-import styles from './styles.module.scss';
-import MoviesList from '../../components/MoviesList';
-import movieStorage, { StorageKeys } from '../../services/movieStorage';
 import { useCallback, useState } from 'react';
-import EmptyList from '../../components/EmptyList';
-import sortByCreatedDate from '../../utils/sortByReleaseDate';
+import MoviesList from 'components/MoviesList';
+import movieStorage, { StorageKeys } from 'services/movieStorage';
+import EmptyList from 'components/EmptyList';
+import sortByCreatedDate from 'utils/sortByReleaseDate';
+import styles from './styles.module.scss';
 
 function WatchList() {
   const [movies, setMovies] = useState(getMovies());

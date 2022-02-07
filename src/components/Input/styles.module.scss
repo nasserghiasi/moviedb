@@ -1,7 +1,12 @@
+.inputContainer {
+  width: 100%;
+}
+
 .input {
-  border-radius: 8px;
+  border-radius: $default-radius;
   border: 1px solid #e0e0e0;
   width: 100%;
+  padding: $default-spacing;
   height: 56px;
   font-size: 20px;
   line-height: 24px

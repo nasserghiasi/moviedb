@@ -1,5 +1,6 @@
 import React, { ImgHTMLAttributes } from 'react';
-import noImage from '../../assets/no-image-placeholder.png';
+import noImage from 'assets/no-image-placeholder.png';
+import { POSTERS_ENDPOINT } from 'configs/configs';
 
 function Image({ src, alt, ...props }: ImgHTMLAttributes<HTMLImageElement>) {
   return (
@@ -16,7 +17,7 @@ function Image({ src, alt, ...props }: ImgHTMLAttributes<HTMLImageElement>) {
 function getPosterUrl(path: string | undefined) {
   if (!path) return noImage;
 
-  return 'https://www.themoviedb.org/t/p/w220_and_h330_face' + path;
+  return POSTERS_ENDPOINT + path;
 }
 
 export default Image;

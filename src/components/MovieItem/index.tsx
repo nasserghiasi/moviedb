@@ -1,14 +1,14 @@
 import React, { useCallback, useState } from 'react';
-import { Movie } from '../../models/movie';
-import styles from './styles.module.scss';
+import { Movie } from 'models/movie';
 import Image from '../Image';
 import Card from '../Card';
+import toast from 'react-simple-toasts';
 import classnames from 'classnames';
 import MovieAction from '../MovieAction';
-import { ReactComponent as Star } from '../../assets/icons/star.svg';
-import { ReactComponent as WatchLater } from '../../assets/icons/plus.svg';
-import movieStorage, { StorageKeys } from '../../services/movieStorage';
-import toast from 'react-simple-toasts';
+import { ReactComponent as Star } from 'assets/icons/star.svg';
+import { ReactComponent as WatchLater } from 'assets/icons/plus.svg';
+import movieStorage, { StorageKeys } from 'services/movieStorage';
+import styles from './styles.module.scss';
 
 interface Props {
   data: Movie;

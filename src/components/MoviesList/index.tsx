@@ -1,4 +1,4 @@
-import { Movie } from '../../models/movie';
+import { Movie } from 'models/movie';
 import MovieItem, { MovieItemProps } from '../MovieItem';
 import styles from './styles.module.scss';
 

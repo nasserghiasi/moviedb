@@ -1,9 +1,9 @@
-import styles from './styles.module.scss';
-import MoviesList from '../../components/MoviesList';
-import movieStorage, { StorageKeys } from '../../services/movieStorage';
 import { useCallback, useState } from 'react';
-import sortByCreatedDate from '../../utils/sortByReleaseDate';
-import EmptyList from '../../components/EmptyList';
+import MoviesList from 'components/MoviesList';
+import movieStorage, { StorageKeys } from 'services/movieStorage';
+import sortByCreatedDate from 'utils/sortByReleaseDate';
+import EmptyList from 'components/EmptyList';
+import styles from './styles.module.scss';
 
 function Favorites() {
   const [movies, setMovies] = useState(getMovies());

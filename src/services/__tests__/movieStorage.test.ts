@@ -1,5 +1,5 @@
 import movieStorage, { StorageKeys } from '../movieStorage';
-import { Movie } from '../../models/movie';
+import { Movie } from 'models/movie';
 
 const movie: Movie = {
   adult: false,

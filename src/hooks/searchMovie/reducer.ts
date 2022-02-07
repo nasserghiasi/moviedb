@@ -1,5 +1,5 @@
 import { Reducer } from 'react';
-import { Movie } from '../../models/movie';
+import { Movie } from 'models/movie';
 
 enum ActionType {
   INIT = 'INIT',

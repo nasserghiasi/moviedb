@@ -13,12 +13,14 @@ function Input({ onChange, value, ...props }: Props) {
   };
 
   return (
-    <input
-      className={styles.input}
-      onChange={handleOnChange}
-      value={value}
-      {...props}
-    />
+    <div className={styles.inputContainer}>
+      <input
+        className={styles.input}
+        onChange={handleOnChange}
+        value={value}
+        {...props}
+      />
+    </div>
   );
 }
 

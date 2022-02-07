@@ -1,8 +1,8 @@
-import useDebouncedCallback from '../debouncedCallback';
-import { searchMovies } from '../../requests/movies';
 import { useEffect, useReducer, useRef } from 'react';
-import { initAction, initialState, reducer, successAction } from './reducer';
 import toast from 'react-simple-toasts';
+import { searchMovies } from 'requests/movies';
+import useDebouncedCallback from '../debouncedCallback';
+import { initAction, initialState, reducer, successAction } from './reducer';
 
 function useSearchMovies(query: string) {
   const [state, dispatch] = useReducer(reducer, initialState);
