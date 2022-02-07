@@ -37,7 +37,7 @@ function MovieItem({ data, className, onChange }: Props) {
     if (onChange) {
       onChange(data);
     }
-  }, [favorite]);
+  }, [data, favorite, onChange]);
 
   const handleToggleWatchList = useCallback(() => {
     if (watchListed) {
@@ -52,7 +52,7 @@ function MovieItem({ data, className, onChange }: Props) {
     if (onChange) {
       onChange(data);
     }
-  }, [watchListed]);
+  }, [data, onChange, watchListed]);
 
   return (
     <div className={classnames(styles.movieItem, className)}>

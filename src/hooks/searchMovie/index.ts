@@ -27,7 +27,7 @@ function useSearchMovies(query: string) {
           toast('Error in search movies. please try again.');
         }
       });
-  }, [query]);
+  }, [fetcher, query]);
 
   return state;
 }

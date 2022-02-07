@@ -1,4 +1,4 @@
-import React, { FormEventHandler, HTMLProps, useRef } from 'react';
+import React, { FormEventHandler, HTMLProps } from 'react';
 import styles from './styles.module.scss';
 
 interface Props extends HTMLProps<HTMLInputElement> {
@@ -6,8 +6,6 @@ interface Props extends HTMLProps<HTMLInputElement> {
 }
 
 function Input({ onChange, value, ...props }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-
   const handleOnChange: FormEventHandler<HTMLInputElement> = e => {
     if (onChange) {
       onChange(e);

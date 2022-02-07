@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Input from '../../components/Input';
 import useSearchMovies from '../../hooks/searchMovie';
 import MoviesList from '../../components/MoviesList';
