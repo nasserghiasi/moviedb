@@ -1,5 +1,10 @@
 # Getting Started
 
+### Demo
+hosted on github pages:
+
+https://nasserghiasi.github.io/moviedb/
+
 ### `npm start`
 
 Runs the app in the development mode.\
