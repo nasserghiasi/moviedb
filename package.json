@@ -2,7 +2,6 @@
   "name": "leovegas-interview",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nasserghiasi.github.io/moviedb",
   "dependencies": {
     "axios": "^0.25.0",
     "babel-jest": "^27.4.2",
