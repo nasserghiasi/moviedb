@@ -6,9 +6,9 @@ interface Props extends HTMLProps<HTMLInputElement> {
 }
 
 function Input({ onChange, value, ...props }: Props) {
-  const handleOnChange: FormEventHandler<HTMLInputElement> = e => {
+  const handleOnChange: FormEventHandler<HTMLInputElement> = event => {
     if (onChange) {
-      onChange(e);
+      onChange(event);
     }
   };
 

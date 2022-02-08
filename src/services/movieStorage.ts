@@ -31,19 +31,29 @@ const movieStorage = {
 
     storage.set(key, movies);
   },
-  findItems(key: StorageKeys, id: number) {
+  findItem(key: StorageKeys, id: number) {
     const items = this.get(key);
 
     return Boolean(items[id]);
   },
   findInFavorites(id: number) {
-    return this.findItems(StorageKeys.FAVORITE, id);
+    return this.findItem(StorageKeys.FAVORITE, id);
   },
   findInWatchList(id: number) {
-    return this.findItems(StorageKeys.WATCH_LIST, id);
+    return this.findItem(StorageKeys.WATCH_LIST, id);
   },
-  getArray(key: StorageKeys): Movie[] {
+  getArray(key: StorageKeys) {
     return Object.values(this.get(key));
+  },
+  getSortedArray(key: StorageKeys) {
+    return this.sortByCreatedDate(this.getArray(key));
+  },
+  sortByCreatedDate(movies: Movie[]) {
+    return movies.sort((a, b) =>
+      a.created_at && b.created_at
+        ? new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        : 0
+    );
   },
 };
 
