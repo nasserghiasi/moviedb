@@ -2,6 +2,10 @@ const cache = {};
 
 const storage = {
   get(key: string) {
+    if (cache[key]) {
+      return cache[key];
+    }
+
     const value = localStorage.getItem(key);
     if (value) {
       const parsedValue = JSON.parse(value);
