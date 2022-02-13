@@ -1,5 +1,6 @@
 import movieStorage, { StorageKeys } from '../movieStorage';
 import { Movie } from 'models/movie';
+import storage from '../storage';
 
 const movies: Movie[] = [
   {
@@ -40,7 +41,7 @@ const movies: Movie[] = [
 
 describe('Movie Storage service', () => {
   beforeEach(() => {
-    window.localStorage.clear();
+    storage.clear();
 
     movieStorage.set(StorageKeys.FAVORITE, movies[0]);
     movieStorage.set(StorageKeys.FAVORITE, movies[1]);
@@ -62,7 +63,7 @@ describe('Movie Storage service', () => {
   });
 
   test('add item in favorites', () => {
-    window.localStorage.clear();
+    storage.clear();
 
     expect(movieStorage.findInFavorites(862)).toBeFalsy();
     movieStorage.set(StorageKeys.FAVORITE, movies[1]);
@@ -70,7 +71,7 @@ describe('Movie Storage service', () => {
   });
 
   test('get sorted array', () => {
-    window.localStorage.clear();
+    storage.clear();
 
     movieStorage.set(StorageKeys.FAVORITE, movies[0]);
     movieStorage.set(StorageKeys.FAVORITE, movies[1]);

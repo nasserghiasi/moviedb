@@ -1,4 +1,4 @@
-const cache = {};
+let cache = {};
 
 const storage = {
   get(key: string) {
@@ -20,6 +20,10 @@ const storage = {
   },
   setCache(key: string, value: any) {
     cache[key] = value;
+  },
+  clear() {
+    cache = {};
+    localStorage.clear();
   },
 };
 
