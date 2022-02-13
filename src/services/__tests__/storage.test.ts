@@ -2,7 +2,7 @@ import storage from '../storage';
 
 describe('Storage service', () => {
   beforeEach(() => {
-    window.localStorage.clear();
+    storage.clear();
     storage.set('TEST', true);
     storage.set('TEST1', { '123': { title: 'test title' } });
     storage.set('FAVORITE', { '123': { title: 'test title' } });
